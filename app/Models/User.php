@@ -24,13 +24,19 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'name', 'email', 'role'
     ];
 
+
+    // protected $hidden = [
+    //     'deleted_at','created_by','updated_by','deleted_by'
+    // ];
+
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
     protected $hidden = [
-        'password',
+        'password','deleted_at','created_by','updated_by','updated_at','deleted_by'
+
     ];
 
     public function getJWTIdentifier()
